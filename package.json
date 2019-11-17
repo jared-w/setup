@@ -25,7 +25,9 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.1",
     "@actions/tool-cache": "^1.1.1",
+    "cross-fetch": "^3.0.4",
     "semver": "^6.1.1"
   },
   "devDependencies": {
