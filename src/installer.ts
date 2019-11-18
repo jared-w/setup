@@ -142,5 +142,17 @@ export async function installGHC(version: string): Promise<void> {
 
     case 'Windows':
       await windowsGHC(version);
+      break;
   }
+  await ex('cabal', '--version');
+  await ex('ghc', '--version');
+  await ex(
+    'cabal',
+    'user-config',
+    'update',
+    '-a',
+    '"http-transport: plain-http"',
+    '-v3'
+  );
+  await ex('cabal', 'user-config', 'diff');
 }
